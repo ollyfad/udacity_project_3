@@ -3,9 +3,9 @@ kind: ConfigMap
 metadata:
   name: config
 data:
-  POSTGRES_HOST: oladatabase.covj1yhof51s.us-east-1.rds.amazonaws.com
+  POSTGRES_HOST: ola-database.cam0otvaavac.us-east-1.rds.amazonaws.com
   POSTGRES_DB: postgres
-  AWS_BUCKET: olabucket-dev
+  AWS_BUCKET: olabuckets-dev
   AWS_REGION: us-east-1
   AWS_PROFILE: default
   URL: http://localhost:8100
