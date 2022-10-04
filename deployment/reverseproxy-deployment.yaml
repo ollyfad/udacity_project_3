@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reverseproxy
+  labels:
+    app: reverseproxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reverseproxy
+  template:
+    metadata:
+      labels:
+        app: reverseproxy
+    spec:
+     containers:
+      - image: ollyfad/udagram-reverseproxy:v3
+        name: reverseproxy
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources:
+            # limits:
+            #   cpu:  "500m"
+            #   memory: "500Mi"
+            requests:
+              cpu: "500m"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: reverseproxy
+  labels:
+    app: reverseproxy
+spec:
+  type: ClusterIP
+  selector:
+    app: reverseproxy
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa-reverseproxy
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: reverseproxy
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 70
