@@ -8,4 +8,4 @@ data:
   AWS_BUCKET: olabuckets-dev
   AWS_REGION: us-east-1
   AWS_PROFILE: default
-  URL: http://aa0b77485d38e45ef8ec9747b2a4e7f2-905291898.us-east-1.elb.amazonaws.com:8100
+  URL: http://localhost:8100
