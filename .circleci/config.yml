@@ -44,7 +44,7 @@ jobs:
 
             docker push ollyfad/udagram-api-feed:v3
             docker push ollyfad/udagram-api-user:v3
-            docker push ollyfad/udagram-frontend:v4
+            docker push ollyfad/udagram-frontend:v5
             docker push ollyfad/udagram-reverseproxy:v3
 
 workflows:
