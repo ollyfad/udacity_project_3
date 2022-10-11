@@ -18,7 +18,7 @@ spec:
       containers:
         - name: frontend
           imagePullPolicy: Always
-          image: ollyfad/udagram-frontend:v8
+          image: ollyfad/udagram-frontend:v7
           ports:
             - containerPort: 80
           resources:
