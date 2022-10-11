@@ -18,15 +18,16 @@ spec:
       containers:
         - name: frontend
           imagePullPolicy: Always
-          image: ollyfad/udagram-frontend:v7
+          image: ollyfad/udagram-frontend:v8
           ports:
             - containerPort: 80
           resources:
-            # limits:
-            #   cpu: "512m"
-            #   memory: "300Mi"
             requests:
-              cpu: "250m"
+              memory: "1024Mi"
+              cpu: "400m"
+            limits:
+              memory: "2048Mi"
+              cpu: "700m"
             
 ---
 apiVersion: v1

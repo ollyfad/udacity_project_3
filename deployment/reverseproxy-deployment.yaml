@@ -15,17 +15,18 @@ spec:
         app: reverseproxy
     spec:
      containers:
-      - image: ollyfad/udagram-reverseproxy:v4
+      - image: ollyfad/udagram-reverseproxy:v5
         name: reverseproxy
         ports:
         - containerPort: 8080
           protocol: TCP
         resources:
-            # limits:
-            #   cpu:  "500m"
-            #   memory: "500Mi"
-            requests:
-              cpu: "500m"
+          requests:
+            memory: "1024Mi"
+            cpu: "400m"
+          limits:
+            memory: "2048Mi"
+            cpu: "700m"
 
 ---
 apiVersion: v1
