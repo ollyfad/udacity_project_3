@@ -32,7 +32,7 @@ jobs:
             docker tag udagram-frontend ollyfad/udagram-frontend:v9
 
             docker build -t udagram-reverseproxy ./udagram-reverseproxy
-            docker tag udagram-reverseproxy ollyfad/udagram-reverseproxy:v6
+            docker tag udagram-reverseproxy ollyfad/udagram-reverseproxy:v7
 
             echo "-------- All images succesfully built----------"
 
@@ -45,7 +45,7 @@ jobs:
             docker push ollyfad/udagram-api-feed:v5
             docker push ollyfad/udagram-api-user:v5
             docker push ollyfad/udagram-frontend:v9
-            docker push ollyfad/udagram-reverseproxy:v6
+            docker push ollyfad/udagram-reverseproxy:v7
 
 workflows:
   default:

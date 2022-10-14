@@ -15,7 +15,7 @@ spec:
         app: reverseproxy
     spec:
      containers:
-      - image: ollyfad/udagram-reverseproxy:v6
+      - image: ollyfad/udagram-reverseproxy:v7
         name: reverseproxy
         ports:
         - containerPort: 8080
